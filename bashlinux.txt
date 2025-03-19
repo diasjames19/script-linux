@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Script para criação de usuários
+
+clear 
+echo "Digite o nome do grupo: "
+read nomeGrupoCriado
+
+sudo groupadd $nomeGrupoCriado
+
+echo "Informe a quantidade de usuários que deseja criar: "
+read qtdUsuario
+
+qtdUsuarioCriado=0
+while [ $qtdUsuarioCriado -lt $qtdUsuario ]; do
+   echo "Digite um nome para o usuário: "
+   read usuarioNome 
+   sudo useradd $usuarioNome -c -m -p($  openssl -crypt senha"senha do usuario") -g -e
+   sudo chmod 774 /home/$nome 
+let qtdUsuarioCriado=$qtdUsuarioCriado+1
+
+done
